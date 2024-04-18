@@ -1,0 +1,125 @@
+.task {
+  display: flex;
+  flex-direction: column; }
+
+.titleTest1 {
+  margin: 8px;
+  padding: 4px;
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.buttonsControl {
+  margin-bottom: 32px; }
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin: 4px;
+  padding: '8px 0';
+  background: white;
+  border: none;
+  border-radius: 8px; }
+
+.button:hover {
+  background: #ffa200; }
+  .button:hover .arrow-left {
+    border-right: 80px solid white; }
+  .button:hover .arrow-right {
+    border-left: 80px solid white; }
+  .button:hover .arrow-up {
+    border-bottom: 80px solid white; }
+  .button:hover .arrow-down {
+    border-top: 80px solid white; }
+  .button:hover .square, .button:hover .circle, .button:hover .oval, .button:hover .rectangle, .button:hover .parallelogram {
+    background: white; }
+  .button:hover .trapezoid {
+    border-bottom: 70px solid white; }
+
+.button-1 {
+  width: 250px; }
+
+.button-2 {
+  width: 500px; }
+
+.button-3 {
+  width: 250px; }
+
+.text {
+  background: #6eda78;
+  color: white;
+  border-radius: 10px;
+  padding: 4px;
+  font-size: 12px;
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.arrow-left {
+  align-items: center;
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-right: 80px solid gray; }
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 80px solid gray; }
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 80px solid gray; }
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 80px solid gray; }
+
+.square {
+  height: 70px;
+  width: 70px;
+  background: gray;
+  align-items: center; }
+
+.circle {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background: gray; }
+
+.oval {
+  height: 70px;
+  width: 120px;
+  border-radius: 50%;
+  background: gray; }
+
+.trapezoid {
+  border-bottom: 70px solid gray;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 125px; }
+
+.rectangle {
+  height: 70px;
+  width: 120px;
+  background: gray; }
+
+.parallelogram {
+  width: 120px;
+  height: 70px;
+  transform: skew(20deg);
+  background: gray; }
