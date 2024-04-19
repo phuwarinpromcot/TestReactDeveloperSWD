@@ -1,0 +1,28 @@
+.task {
+  display: flex;
+  flex-direction: column; }
+
+.titleTest2 {
+  margin: 8px;
+  padding: 4px;
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; }
+
+.table {
+  margin-right: 48px;
+  margin-left: 48px; }
+
+.buttonDelete {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: start; }
+
+.buttonForm {
+  margin: 8px; }
