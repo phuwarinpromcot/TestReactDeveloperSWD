@@ -13,7 +13,9 @@
 .form {
   display: flex;
   justify-content: center;
-  margin-top: 50px; }
+  margin-top: 50px;
+  border: black;
+  border-radius: 8px; }
 
 .table {
   margin-right: 48px;

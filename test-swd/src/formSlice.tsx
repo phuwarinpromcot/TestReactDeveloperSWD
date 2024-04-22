@@ -21,7 +21,7 @@ const initialState: FormState = {
 
 const formSlice = createSlice({
   name: "form",
-  initialState,
+  initialState: initialState,
   reducers: {
     addFormData: (state, action: PayloadAction<DataType>) => {
       state.formData.push(action.payload);

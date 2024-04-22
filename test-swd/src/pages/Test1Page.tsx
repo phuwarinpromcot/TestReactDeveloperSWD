@@ -13,6 +13,8 @@ export const Test1Page = () => {
     "rectangle",
     "parallelogram",
   ]);
+  const [rowsSwapped, setRowsSwapped] = useState(false);
+
 
   const moveShape = (direction: string) => {
     const newShapes = [...shapes];
@@ -31,11 +33,7 @@ export const Test1Page = () => {
   };
 
   const swapShapes = () => {
-    const newShapes = [...shapes];
-    const firstRow = newShapes.slice(0, newShapes.length / 2);
-    const secondRow = newShapes.slice(newShapes.length / 2);
-
-    setShapes([...secondRow, ...firstRow]);
+    setRowsSwapped(!rowsSwapped);
   };
 
   const randomShapes = () => {
@@ -89,24 +87,26 @@ export const Test1Page = () => {
         </Row>
       </div>
       <div>
-        <Row justify="end">
-          {shapes.slice(0, shapes.length / 2).map((shape, index) => (
-            <Col key={index}>
-              <button className="button button-1" onClick={randomShapes}>
-                <div className={shape}></div>
-              </button>
-            </Col>
-          ))}
-        </Row>
-        <Row justify="center">
-          {shapes.slice(shapes.length / 2).map((shape, index) => (
-            <Col key={index}>
-              <button className="button button-1" onClick={randomShapes}>
-                <div className={shape}></div>
-              </button>
-            </Col>
-          ))}
-        </Row>
+        
+          <Row justify={rowsSwapped ? "center" : "end"}>
+            {shapes.slice(0, shapes.length / 2).map((shape, index) => (
+              <Col key={index}>
+                <button className="button button-1" onClick={randomShapes}>
+                  <div className={shape}></div>
+                </button>
+              </Col>
+            ))}
+          </Row>
+          <Row justify={rowsSwapped ? "end" : "center"}>
+            {shapes.slice(shapes.length / 2).map((shape, index) => (
+              <Col key={index}>
+                <button className="button button-1" onClick={randomShapes}>
+                  <div className={shape}></div>
+                </button>
+              </Col>
+            ))}
+          </Row>
+        
       </div>
     </div>
   );

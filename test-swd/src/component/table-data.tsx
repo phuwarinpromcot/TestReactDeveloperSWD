@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Button, Checkbox, Table } from "antd";
 import { CheckboxChangeEvent } from "antd/lib/checkbox";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux-store";
 
 interface DataType {
   key: React.Key;
@@ -12,6 +14,7 @@ interface DataType {
 }
 
 export const TableData: React.FC = () => {
+  const formData = useSelector((state: RootState) => state.form.formData);  
   const [data, setData] = useState<DataType[]>([]);
   const [selectAll, setSelectAll] = useState(false);
   const [sortedInfo, setSortedInfo] = useState<{
@@ -23,7 +26,7 @@ export const TableData: React.FC = () => {
     const storedData = localStorage.getItem("formData");
     if (storedData) {
       const parsedData: DataType[] = JSON.parse(storedData).map(
-        (item: DataType) => ({ ...item, selected: false })
+        (item: DataType) => ({ ...item, selected: false, key: item.key })
       );
       setData(parsedData);
     }
@@ -31,7 +34,7 @@ export const TableData: React.FC = () => {
 
   useEffect(() => {
     fetchDataFromLocalStorage();
-  }, []);
+  }, [formData]);
 
   const handleChange = (pagination: any, filters: any, sorter: any) => {
     console.log("Various parameters", pagination, filters, sorter);
@@ -110,6 +113,7 @@ export const TableData: React.FC = () => {
     {
       title: "จัดการ",
       dataIndex: "action",
+      key: "action",
       render: (_: string, record: DataType) => (
         <Button onClick={() => handleDeleteRow(record)}>ลบ</Button>
       ),
